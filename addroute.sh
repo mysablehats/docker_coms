@@ -1,12 +1,15 @@
 #!/usr/bin/env bash
 
-
+ALLDEFAULTNICS=`route | grep '^default' | grep -o '[^ ]*$'`
+set $ALLDEFAULTNICS
+printf 'default nics found:\n%s\nWill add rule for %s, hope I am not making a mistake!\n' "$ALLDEFAULTNICS" "$1"
 DOCKERPCIP=10.0.0.7
-THISPCNIC=enp8s0
+THISPCNIC=$1
 DOCKERNET=172.0.0.0
 DOCKERNETMASK=8
 
-MYRULE=`ip route | grep ${DOCKERNET}`
+#MYRULE=`ip route | grep ${DOCKERNET}`
+MYRULE='f'
 
 if [ -z "${MYRULE}" ]
 then
