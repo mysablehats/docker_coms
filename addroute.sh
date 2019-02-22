@@ -8,8 +8,7 @@ THISPCNIC=$1
 DOCKERNET=172.0.0.0
 DOCKERNETMASK=8
 
-#MYRULE=`ip route | grep ${DOCKERNET}`
-MYRULE='f'
+MYRULE=`ip route | grep ${DOCKERNET}`
 
 if [ -z "${MYRULE}" ]
 then
