@@ -4,6 +4,4 @@ set DOCKERMACHINEIP [lindex $argv 0]
 set MACHINEHOSTNAME [lindex $argv 1]
 set DOCKERMACHINEPORT [lindex $argv 2]
 spawn ssh -oHostKeyAlgorithms=ssh-rsa root@${MACHINEHOSTNAME} -p $DOCKERMACHINEPORT
-expect "*(yes/no)?*"
-send -- "yes\r"
-exit
+expect (yes/no)? {send "yes\r"; interact; }
