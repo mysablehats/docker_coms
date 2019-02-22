@@ -1,0 +1,8 @@
+#!/usr/bin/expect -f
+
+set DOCKERMACHINEIP [lindex $argv 0]
+set MACHINEHOSTNAME [lindex $argv 1]
+set DOCKERMACHINEPORT [lindex $argv 2]
+spawn ssh -oHostKeyAlgorithms=ssh-rsa root@${MACHINEHOSTNAME} -p $DOCKERMACHINEPORT
+expect "*(yes/no)?*"
+send -- "yes\b\r"
