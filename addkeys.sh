@@ -2,7 +2,7 @@
 # adds the keys to each machine defined in the local hosts file.
 # needs expect (sudo apt install expect)
 
-sh ./addroute.sh
+bash ./addroute.sh
 DOCKERMACHINEPORT=22
 SSHKNOWHOSTSPATH=~/.ssh/known_hosts
 export HOSTALIASES=$PWD/hosts

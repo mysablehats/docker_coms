@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- if show a image_view window subscribed to the generated stream -->
+    <arg name="rosmastername" default="SATELLITE-S50-B"/>
+    <machine name="tsn_caffe" address="tsn_caffe" user="root" password="ros_ros" env-loader="/temporal-segment-networks/catkin_ws/src/caffe_tsn_ros/env.sh $(arg rosmastername)" ssh-port="22"/>
+  <node name="chatter_node_test" machine="tsn_caffe" pkg="caffe_tsn_ros" type="chatter.py" respawn="false" output="screen" required="true">
+
+  </node>
+</launch>
