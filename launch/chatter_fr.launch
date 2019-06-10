@@ -3,7 +3,7 @@
   <!-- if show a image_view window subscribed to the generated stream -->
     <arg name="rosmastername" default="SATELLITE-S50-B"/>
     <machine name="facerecognition" address="facerecognition" user="root" password="ros_ros" env-loader="/catkin_ws/src/face_recognition_ros/env.sh $(arg rosmastername)" ssh-port="22"/>
-  <node name="chatter_node_test" machine="facerecognition" pkg="face_recognition_ros" type="chatter.py" respawn="false" output="screen" required="true">
+  <node name="chatter_node_test" machine="facerecognition" pkg="face_recognition_ros" type="chatter.py" respawn="false" output="log" required="true">
 
   </node>
 </launch>

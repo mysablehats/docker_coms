@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- if show a image_view window subscribed to the generated stream -->
+    <arg name="rosmastername" default="SATELLITE-S50-B"/>
+    <machine name="tsn_denseflow" address="tsn_denseflow" user="root" password="ros_ros" env-loader="/catkin_ws/src/dense_flow/env.sh $(arg rosmastername)" ssh-port="22"/>
+  <node name="chatter_node_test" machine="tsn_denseflow" pkg="docker_conn_tests" type="image_republisher.py" respawn="false" output="log" required="true">
+    <param name="image_input" value="/camera/rgb/image_color"/>
+    <param name="image_output" value="/image_raw"/>
+  </node>
+</launch>

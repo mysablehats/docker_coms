@@ -1,2 +1,4 @@
-tsn_caffe 172.28.5.3
-facerecognition 172.28.6.4
+tsn_caffe 172.28.5.3 22
+tsn_denseflow 172.28.5.2 522
+poop  10.0.0.7 22
+facerecognition 172.28.6.4 22

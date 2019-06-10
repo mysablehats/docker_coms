@@ -2,7 +2,7 @@
 
 ALLDEFAULTNICS=`route | grep '^default' | grep -o '[^ ]*$'`
 set $ALLDEFAULTNICS
-THISPCNIC=enp8s0
+THISPCNIC=$1
 
 while IFS='' read -r line || [[ -n "$line" ]]; do
   #maybe I should read comment marks here to allow some description in those files?

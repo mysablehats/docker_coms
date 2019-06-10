@@ -3,7 +3,7 @@
 # needs expect (sudo apt install expect)
 
 bash ./addroute.sh
-DOCKERMACHINEPORT=22
+#DOCKERMACHINEPORT=22
 SSHKNOWHOSTSPATH=~/.ssh/known_hosts
 export HOSTALIASES=$PWD/hosts
 while IFS='' read -r line || [[ -n "$line" ]]; do
@@ -12,7 +12,7 @@ while IFS='' read -r line || [[ -n "$line" ]]; do
     set $line ### this will put words into $1, $2, etc...
     MACHINEHOSTNAME=$1
     DOCKERMACHINEIP=$2
-
+    DOCKERMACHINEPORT=$3
     #echo "the ip is $1 and the name is $2 "
     if [[ -z `ssh-keygen -H -F $MACHINEHOSTNAME` ]]
     then
